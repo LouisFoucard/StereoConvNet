@@ -1,10 +1,21 @@
 # StereoConvNet
 Stereo fully convolutional neural network for depth map prediction from stereo images. The network is implemented using 
-the nn library Lasagne, and training-time/over-fitting are reduced significantly with the help of the recently developed Batch
-normalization technique (http://arxiv.org/abs/1502.03167).
+the nn library Lasagne, and training-time/over-fitting are reduced significantly with the help of the recently developed Batch normalization technique (http://arxiv.org/abs/1502.03167).
+
 The network is fully convolutional, and takes a couple of grayscale stereoscopic images concatenated along the channel axis,
 and ouputs  a single image representing the depth map. 
-The traing/validation sets are created using the random virtual 3d scene generator (see https://github.com/LouisFoucard/DepthMap_dataset).
+
+The traing/validation sets are created using the random virtual 3d scene generator (see https://github.com/LouisFoucard/DepthMap_dataset) that looks as follows:
+
+Example scene:
+
+![alt tag](https://raw.github.com/LouisFoucard/DepthMap_dataset/master/StereoImages/Stereoscopic_190.png)
+
+and corresponding Depth map:
+
+![alt tag](https://raw.github.com/LouisFoucard/DepthMap_dataset/master/Depth_map/DepthMap_190.png)
+
+
 The objective function used here is Eulerian distance. 
 
 The architecture is roughly as follows:
