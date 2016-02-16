@@ -3,20 +3,16 @@ Stereo fully convolutional neural network for depth map prediction from stereo i
 the nn library Lasagne, and training-time/over-fitting are reduced significantly with the help of the recently developed Batch normalization technique (http://arxiv.org/abs/1502.03167).
 
 The network is fully convolutional, and takes a couple of grayscale stereoscopic images concatenated along the channel axis,
-and ouputs  a single image representing the depth map. 
+and ouputs  a single image representing the depth map. A series of Convolutional and maxpooling layers followed by a series of upscalling and deconvolutional layers allows the network to
+extract image disparity features at the smaller scale (object edges), and generate a smooth estimate of the depth map at the larger scale (full object). This technique allows an estimation of the depth map even on textureless objects.
 
-The traing/validation sets are created using the random virtual 3d scene generator (see https://github.com/LouisFoucard/DepthMap_dataset) that looks as follows:
+The traing/validation sets are created using the random virtual 3d scene generator (see https://github.com/LouisFoucard/DepthMap_dataset). The objective function used here is Eulerian distance. 
 
-Example scene:
+Below are examples of a random 3d scene, its ground truth depth map, and the predictions computed with the fully convolutional stereo neural network:
 
-![alt tag](https://raw.github.com/LouisFoucard/DepthMap_dataset/master/StereoImages/Stereoscopic_190.png)
-
-and corresponding Depth map (ground truth):
-
-![alt tag](https://raw.github.com/LouisFoucard/DepthMap_dataset/master/Depth_map/DepthMap_190.png)
+![alt tag](https://github.com/LouisFoucard/StereoConvNet/blob/master/examples.png)
 
 
-The objective function used here is Eulerian distance. 
 
 The architecture is roughly as follows:
 
