@@ -7,14 +7,9 @@ and ouputs  a single image representing the depth map.
 
 The traing/validation sets are created using the random virtual 3d scene generator (see https://github.com/LouisFoucard/DepthMap_dataset) that looks as follows:
 
-Example scene:
+Below are examples of a random 3d scene, its ground truth depth map, and the predictions computed with the fully convolutional stereo neural network:
 
-![alt tag](https://raw.github.com/LouisFoucard/DepthMap_dataset/master/StereoImages/Stereoscopic_190.png)
-
-and corresponding Depth map (ground truth):
-
-![alt tag](https://raw.github.com/LouisFoucard/DepthMap_dataset/master/Depth_map/DepthMap_190.png)
-
+![alt tag](https://github.com/LouisFoucard/StereoConvNet/blob/master/examples.png)
 
 The objective function used here is Eulerian distance. 
 
