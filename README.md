@@ -10,18 +10,32 @@ The objective function used here is Eulerian distance.
 The architecture is roughly as follows:
 
 Input layer (batch_size x 2 x width x height)
+
 conv1 (batch_size x 16 x width x height)
+
 maxpool1 (batch_size x 16 x width/2 x height/2)
+
 conv2 (batch_sizex 32 x width/2 x height/2)
+
 maxpool2  (batch_size x 32 x width/4 x height/4)
+
 conv3 (batch_size x 64 x width/4 x height/4)
+
 maxool3 (batch_size x 64 x width/8 x height/8)
+
 conv4 (batch_size x 128, x width/8 x height/8)
+
 deconv1 (batch_size x 32, x width/8 x height/8)
+
 upscale1 (batch_size x 32 x width/4 x height/4)
+
 deconv2 (batch_size x 16, x width/4 x height/4)
+
 upscale2 (batch_size x 16 x width/2 x height/2)
+
 deconv3(batch_size x 8 x width/2 x height/2)
+
 upscale3 (batch_size x 8 x width x height)
+
 deconv4  (batch_size x 1 x width x height)
 
