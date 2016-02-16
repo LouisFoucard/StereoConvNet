@@ -11,7 +11,7 @@ Example scene:
 
 ![alt tag](https://raw.github.com/LouisFoucard/DepthMap_dataset/master/StereoImages/Stereoscopic_190.png)
 
-and corresponding Depth map:
+and corresponding Depth map (ground truth):
 
 ![alt tag](https://raw.github.com/LouisFoucard/DepthMap_dataset/master/Depth_map/DepthMap_190.png)
 
