@@ -4,7 +4,7 @@ the nn library Lasagne, and training-time/over-fitting are reduced significantly
 
 The network is fully convolutional, and takes a couple of grayscale stereoscopic images concatenated along the channel axis,
 and ouputs  a single image representing the depth map. A series of Convolutional and maxpooling layers followed by a series of upscalling and deconvolutional layers allows the network to
-extract image disparity features at the smaller scale and generate a large scale smooth estimate of the depth map on textureless objects.
+extract image disparity features at the smaller scale (object edges), and generate a smooth estimate of the depth map at the larger scale (full object). This technique allows an estimation of the depth map even on textureless objects.
 
 The traing/validation sets are created using the random virtual 3d scene generator (see https://github.com/LouisFoucard/DepthMap_dataset). The objective function used here is Eulerian distance. 
 
