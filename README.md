@@ -3,8 +3,8 @@ Stereo fully convolutional neural network for depth map prediction from stereo i
 the nn library Lasagne, and training-time/over-fitting are reduced significantly with the help of the recently developed Batch normalization technique (http://arxiv.org/abs/1502.03167).
 
 The network is fully convolutional, and takes a couple of grayscale stereoscopic images concatenated along the channel axis,
-and ouputs  a single image representing the depth map. A series of Convolutional and maxpooling layers followed by a series of upscalling and deconvolutional layers allows the network to
-extract image disparity features at the smaller scale (object edges), and generate a smooth estimate of the depth map at the larger scale (full object). The main advantage of this technique over other methods from the computer vision research (based on an explicit computation of image disparity) is its robustness, in particular the the fact that it is able to produce smooth estimates of the depth map even on textureless region.
+and ouputs  a single image representing the depth map. A series of convolutional and maxpooling layers followed by a series of upscalling and deconvolutional layers allow the network to
+extract image disparity features at the smaller scale (object edges), and generate a smooth estimate of the depth map at the larger scale (full object). The main advantage of this technique over other methods from computer vision research (based on an explicit computation of image disparity) is its robustness, in particular the the fact that it is able to produce smooth estimates of the depth map even on textureless region.
 
 The traing/validation sets are created using the random virtual 3d scene generator (see https://github.com/LouisFoucard/DepthMap_dataset). The objective function used here is Eulerian distance. 
 Thanks to batch normalization, training only takes 10 minutes (2000 images) on a K520 (AWS GPU), or 2 hours on a mac book pro.
