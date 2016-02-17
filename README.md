@@ -14,6 +14,12 @@ Below are examples of a random 3d scene, its ground truth depth map, and the pre
 ![alt tag](https://github.com/LouisFoucard/StereoConvNet/blob/master/examples.png)
 
 
+To check whether the network is truly learning stereo features, or merely learning to associate a closer distance to whatever object it sees on top of the background (similar to depthmap estimation from single images, which has been explored recently), let's run the network on 2 left images, instead of the stereo couple left/right images. In this case, there are no disparities between the 2 images, so this should throw the depthmap estimation off:
+
+![alt tag](https://github.com/LouisFoucard/StereoConvNet/blob/master/check.png)
+
+We see indeed that the depth map calculated from 2 left images is off (last column), and objects are simply not registered and disappear altogether. This seems to support the idea that the network is learning true stereo features based on image disparity.
+
 
 The architecture is roughly as follows:
 
